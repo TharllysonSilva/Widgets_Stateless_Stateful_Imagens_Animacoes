@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 0, 37, 204)),
           useMaterial3: true,
         ),
-        home: Column(
+        home: Container(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -73,6 +74,6 @@ class MyApp extends StatelessWidget {
               ],
             )
           ],
-        ));
+        )));
   }
 }
