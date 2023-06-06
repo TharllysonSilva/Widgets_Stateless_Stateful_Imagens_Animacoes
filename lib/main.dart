@@ -17,11 +17,20 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 0, 37, 204)),
         useMaterial3: true,
       ),
-      home: Container(
-        color: Colors.white,
-        child: Container(
-          color: Colors.blue,
-        ),
+      home: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 50,
+            height: 50,
+          ),
+        ],
       ),
     );
   }
