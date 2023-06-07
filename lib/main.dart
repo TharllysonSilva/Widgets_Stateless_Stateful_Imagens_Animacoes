@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
                 height: 100,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       color: Colors.black26,
@@ -37,6 +38,8 @@ class MyApp extends StatelessWidget {
                       height: 100,
                     ),
                     Text('Aprender Flutter'),
+                    ElevatedButton(
+                        onPressed: () {}, child: Icon(Icons.arrow_drop_up))
                   ],
                 ),
               )
