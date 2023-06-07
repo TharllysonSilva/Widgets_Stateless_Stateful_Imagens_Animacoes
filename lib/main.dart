@@ -19,7 +19,30 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Tarefas'),
         ),
-        body: Container(),
+        body: Container(
+          child: Stack(
+            children: [
+              Container(
+                color: Colors.blue,
+                height: 140,
+              ),
+              Container(
+                color: Colors.white,
+                height: 100,
+                child: Row(
+                  children: [
+                    Container(
+                      color: Colors.black26,
+                      width: 76,
+                      height: 100,
+                    ),
+                    Text('Aprender Flutter'),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
