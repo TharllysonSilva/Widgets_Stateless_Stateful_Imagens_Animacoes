@@ -19,13 +19,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Tarefas'),
         ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Task('Aprender Flutter'),
-              Task('Aprender Dart'),
-              Task('Aprender SQLite'),
-            ]),
+        body: ListView(children: [
+          Task('Aprender Flutter'),
+          Task('Aprender Dart'),
+          Task('Aprender SQLite'),
+          Task('Aprender Spring Bot'),
+          Task('Aprender React Native'),
+          Task('Aprender React'),
+          Task('Aprender GetX'),
+          Task('Aprender MobX'),
+        ]),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
@@ -38,31 +41,40 @@ class Task extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Stack(
-        children: [
-          Container(
-            color: Colors.blue,
-            height: 140,
-          ),
-          Container(
-            color: Colors.white,
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  color: Colors.black26,
-                  width: 76,
-                  height: 100,
-                ),
-                Text(nome),
-                ElevatedButton(
-                    onPressed: () {}, child: Icon(Icons.arrow_drop_up))
-              ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.blue,
+              height: 140,
             ),
-          )
-        ],
+            Container(
+              color: Colors.white,
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    color: Colors.black26,
+                    width: 76,
+                    height: 100,
+                  ),
+                  Container(
+                      width: 200,
+                      child: Text(
+                        nome,
+                        style: TextStyle(fontSize: 24),
+                        overflow: TextOverflow.ellipsis,
+                      )),
+                  ElevatedButton(
+                      onPressed: () {}, child: Icon(Icons.arrow_drop_up))
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
