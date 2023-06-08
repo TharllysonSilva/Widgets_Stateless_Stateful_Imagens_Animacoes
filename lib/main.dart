@@ -87,10 +87,18 @@ class _TaskState extends State<Task> {
                     ],
                   ),
                 ),
-                Text(
-                  'Nível: $nivel',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                )
+                Row(
+                  children: [
+                    Container(
+                      child: LinearProgressIndicator(),
+                      width: 200,
+                    ),
+                    Text(
+                      'Nível: $nivel',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ],
+                ),
               ],
             )
           ],
