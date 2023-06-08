@@ -19,11 +19,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Tarefas'),
         ),
-        body: Column(children: [
-          Task('Aprender Flutter'),
-          Task('Aprender Dart'),
-          Task('Aprender SQLite'),
-        ]),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Task('Aprender Flutter'),
+              Task('Aprender Dart'),
+              Task('Aprender SQLite'),
+            ]),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
