@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           Task('Aprender GetX'),
           Task('Aprender MobX'),
         ]),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
+        // floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
   }
