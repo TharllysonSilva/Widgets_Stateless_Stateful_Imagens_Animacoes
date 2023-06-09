@@ -72,7 +72,7 @@ class _TaskState extends State<Task> {
                         width: 76,
                         height: 100,
                         child: Image.network(
-                          widget.foto,
+                          'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
                           fit: BoxFit.cover,
                         ),
                       ),
