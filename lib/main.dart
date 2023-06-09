@@ -21,15 +21,14 @@ class MyApp extends StatelessWidget {
           title: Text('Tarefas'),
         ),
         body: ListView(children: [
-          Task('Aprender Flutter',
-              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
-          Task('Aprender Dart', ''),
-          Task('Aprender SQLite', ''),
-          Task('Aprender Spring Bot', ''),
-          Task('Aprender React Native', ''),
-          Task('Aprender React', ''),
-          Task('Aprender GetX', ''),
-          Task('Aprender MobX', ''),
+          Task('Aprender Flutter'),
+          Task('Aprender Dart'),
+          Task('Aprender SQLite'),
+          Task('Aprender Spring Bot'),
+          Task('Aprender React Native'),
+          Task('Aprender React'),
+          Task('Aprender GetX'),
+          Task('Aprender MobX'),
         ]),
         // floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
@@ -39,9 +38,9 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String nome;
-  final String foto;
+  // final String foto;
 
-  const Task(this.nome, this.foto, {Key? key}) : super(key: key);
+  const Task(this.nome, {Key? key}) : super(key: key);
 
   @override
   State<Task> createState() => _TaskState();
@@ -71,26 +70,30 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 76,
                         height: 100,
-                        child: Image.network(
-                          widget.foto,
+                        child: const Image(
+                          image: NetworkImage(
+                              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
                           fit: BoxFit.cover,
                         ),
                       ),
                       Container(
-                          width: 200,
-                          child: Text(
-                            widget.nome,
-                            style: TextStyle(fontSize: 24),
-                            overflow: TextOverflow.ellipsis,
-                          )),
+                        width: 200,
+                        child: Text(
+                          widget.nome,
+                          style: TextStyle(fontSize: 24),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                       Container(
                         height: 52,
                         width: 52,
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(() {
-                              nivel++;
-                            });
+                            setState(
+                              () {
+                                nivel++;
+                              },
+                            );
                             print(nivel);
                           },
                           child: Column(
