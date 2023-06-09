@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           title: Text('Tarefas'),
         ),
         body: ListView(
-          children: [
+          children: const [
             Task(
               nome: 'Aprender Flutter',
               foto:
@@ -169,7 +169,7 @@ class _TaskState extends State<Task> {
                             );
                             print(nivel);
                           },
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Icon(Icons.arrow_drop_up),
@@ -190,18 +190,19 @@ class _TaskState extends State<Task> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
+                        width: 200,
                         child: LinearProgressIndicator(
                           color: Colors.white,
                           value: (nivel / widget.dificuldade) / 10,
                         ),
-                        width: 200,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Text(
                         'Nível: $nivel',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     )
                   ],
