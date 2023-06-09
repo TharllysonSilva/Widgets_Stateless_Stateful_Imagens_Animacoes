@@ -20,16 +20,25 @@ class MyApp extends StatelessWidget {
           leading: Container(),
           title: Text('Tarefas'),
         ),
-        body: ListView(children: [
-          Task('Aprender Flutter'),
-          Task('Aprender Dart'),
-          Task('Aprender SQLite'),
-          Task('Aprender Spring Bot'),
-          Task('Aprender React Native'),
-          Task('Aprender React'),
-          Task('Aprender GetX'),
-          Task('Aprender MobX'),
-        ]),
+        body: ListView(
+          children: [
+            Task(
+                nome: 'Aprender Flutter',
+                foto:
+                    'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
+            Task(
+              nome: 'Aprender Golang',
+              foto:
+                  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Flinivecristine%2Fquerido-diario-hoje-descobri-o-golang-4b6&psig=AOvVaw3icu5lWJI5FACG2wsUq8Fo&ust=1686419532618000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPDfrbvgtv8CFQAAAAAdAAAAABAK',
+            ),
+            Task(nome: 'Aprender SQLite'),
+            Task(nome: 'Aprender Spring Bot'),
+            Task(nome: 'Aprender React Native'),
+            Task(nome: 'Aprender React'),
+            Task(nome: 'Aprender GetX'),
+            Task(nome: 'Aprender MobX'),
+          ],
+        ),
         // floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
@@ -38,9 +47,13 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String nome;
-  // final String foto;
+  final String fotoPadrao =
+      'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large';
+  final String? foto;
 
-  const Task(this.nome, {Key? key}) : super(key: key);
+  const Task({super.key, required this.nome, this.foto});
+
+  // const Task(this.nome, this.foto, {Key? key}) : super(key: key);
 
   @override
   State<Task> createState() => _TaskState();
@@ -70,9 +83,8 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 76,
                         height: 100,
-                        child: const Image(
-                          image: NetworkImage(
-                              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
+                        child: Image(
+                          image: NetworkImage(widget.foto ?? widget.fotoPadrao),
                           fit: BoxFit.cover,
                         ),
                       ),
