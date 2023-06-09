@@ -27,16 +27,22 @@ class MyApp extends StatelessWidget {
                 foto:
                     'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
             Task(
-              nome: 'Aprender Golang',
+              nome: 'Andar de Bike',
               foto:
-                  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fdev.to%2Flinivecristine%2Fquerido-diario-hoje-descobri-o-golang-4b6&psig=AOvVaw3icu5lWJI5FACG2wsUq8Fo&ust=1686419532618000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPDfrbvgtv8CFQAAAAAdAAAAABAK',
+                  'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
             ),
-            Task(nome: 'Aprender SQLite'),
-            Task(nome: 'Aprender Spring Bot'),
-            Task(nome: 'Aprender React Native'),
-            Task(nome: 'Aprender React'),
-            Task(nome: 'Aprender GetX'),
-            Task(nome: 'Aprender MobX'),
+            Task(
+                nome: 'Ler os livros',
+                foto:
+                    'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg'),
+            Task(
+                nome: 'Meditar',
+                foto:
+                    'https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg'),
+            Task(
+                nome: 'Jogar video game',
+                foto:
+                    'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg'),
           ],
         ),
         // floatingActionButton: FloatingActionButton(onPressed: () {}),
