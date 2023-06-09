@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool opacidade = true;
 
   // This widget is the root of your application.
   @override
@@ -20,40 +27,50 @@ class MyApp extends StatelessWidget {
           leading: Container(),
           title: Text('Tarefas'),
         ),
-        body: ListView(
-          children: const [
-            Task(
-              nome: 'Aprender Flutter',
-              foto:
-                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
-              dificuldade: 3,
-            ),
-            Task(
-              nome: 'Andar de Bike',
-              foto:
-                  'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
-              dificuldade: 2,
-            ),
-            Task(
-              nome: 'Ler os livros',
-              foto:
-                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
-              dificuldade: 4,
-            ),
-            Task(
-              nome: 'Meditar',
-              foto:
-                  'https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg',
-              dificuldade: 5,
-            ),
-            Task(
-              nome: 'Jogar video game',
-              foto: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
-              dificuldade: 1,
-            ),
-          ],
+        body: AnimatedOpacity(
+          opacity: opacidade ? 1 : 0,
+          duration: Duration(milliseconds: 800),
+          child: ListView(
+            children: const [
+              Task(
+                nome: 'Aprender Flutter',
+                foto:
+                    'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+                dificuldade: 3,
+              ),
+              Task(
+                nome: 'Andar de Bike',
+                foto:
+                    'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
+                dificuldade: 2,
+              ),
+              Task(
+                nome: 'Ler os livros',
+                foto:
+                    'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+                dificuldade: 4,
+              ),
+              Task(
+                nome: 'Meditar',
+                foto:
+                    'https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg',
+                dificuldade: 5,
+              ),
+              Task(
+                nome: 'Jogar video game',
+                foto: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
+                dificuldade: 1,
+              ),
+            ],
+          ),
         ),
-        // floatingActionButton: FloatingActionButton(onPressed: () {}),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                opacidade = !opacidade;
+              });
+            },
+            child: Icon(Icons.remove_red_eye_sharp)),
       ),
     );
   }
@@ -84,13 +101,19 @@ class _TaskState extends State<Task> {
         child: Stack(
           children: [
             Container(
-              color: Colors.blue,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: Colors.blue,
+              ),
               height: 140,
             ),
             Column(
               children: [
                 Container(
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Colors.white,
+                  ),
                   height: 100,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,9 +122,13 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 76,
                         height: 100,
-                        child: Image(
-                          image: NetworkImage(widget.foto ?? widget.fotoPadrao),
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: Image(
+                            image:
+                                NetworkImage(widget.foto ?? widget.fotoPadrao),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Column(
@@ -193,7 +220,9 @@ class _TaskState extends State<Task> {
                         width: 200,
                         child: LinearProgressIndicator(
                           color: Colors.white,
-                          value: (nivel / widget.dificuldade) / 10,
+                          value: (widget.dificuldade > 0)
+                              ? (nivel / widget.dificuldade) / 10
+                              : 1,
                         ),
                       ),
                     ),
