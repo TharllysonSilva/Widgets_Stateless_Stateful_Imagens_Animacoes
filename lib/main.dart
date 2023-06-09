@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
           title: Text('Tarefas'),
         ),
         body: ListView(children: [
-          Task('Aprender Flutter', ''),
+          Task('Aprender Flutter',
+              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
           Task('Aprender Dart', ''),
           Task('Aprender SQLite', ''),
           Task('Aprender Spring Bot', ''),
@@ -70,7 +71,10 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 76,
                         height: 100,
-                        child: Image.network(widget.foto),
+                        child: Image.network(
+                          widget.foto,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                           width: 200,
