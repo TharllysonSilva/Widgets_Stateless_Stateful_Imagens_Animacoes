@@ -24,31 +24,27 @@ class _InitialScreenState extends State<InitialScreen> {
           children: const [
             Task(
               nome: 'Aprender Flutter',
-              foto:
-                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+              foto: 'assets/images/dash.jpg',
               dificuldade: 3,
             ),
             Task(
               nome: 'Andar de Bike',
-              foto:
-                  'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
+              foto: 'assets/images/bike.jpg',
               dificuldade: 2,
             ),
             Task(
               nome: 'Ler os livros',
-              foto:
-                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+              foto: 'assets/images/livros.jpg',
               dificuldade: 4,
             ),
             Task(
               nome: 'Meditar',
-              foto:
-                  'https://manhattanmentalhealthcounseling.com/wp-content/uploads/2019/06/Top-5-Scientific-Findings-on-MeditationMindfulness-881x710.jpeg',
+              foto: 'assets/images/meditar.jpeg',
               dificuldade: 5,
             ),
             Task(
               nome: 'Jogar video game',
-              foto: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
+              foto: 'assets/images/jogar.jpg',
               dificuldade: 1,
             ),
             SizedBox(
