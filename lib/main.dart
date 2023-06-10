@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_project/initial_screen.dart';
+import 'package:flutter_test_project/screens/initial_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: InitialScreen(),
+      home: const InitialScreen(),
     );
   }
 }
