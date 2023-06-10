@@ -51,6 +51,9 @@ class _InitialScreenState extends State<InitialScreen> {
               foto: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
               dificuldade: 1,
             ),
+            SizedBox(
+              height: 80,
+            )
           ],
         ),
       ),
