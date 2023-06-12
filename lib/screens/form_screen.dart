@@ -17,11 +17,14 @@ class _FormScreenState extends State<FormScreen> {
       body: Center(
         child: Container(
           height: 580,
-          width: 375,
+          width: 390,
           decoration: BoxDecoration(
             color: Colors.black12,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 3),
+          ),
+          child: Column(
+            children: [],
           ),
         ),
       ),
