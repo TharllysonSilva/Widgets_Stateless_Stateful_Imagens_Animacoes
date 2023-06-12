@@ -14,13 +14,15 @@ class _FormScreenState extends State<FormScreen> {
       appBar: AppBar(
         title: const Text('Nova Tarefa'),
       ),
-      body: Container(
-        height: 650,
-        width: 375,
-        decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 3),
+      body: Center(
+        child: Container(
+          height: 580,
+          width: 375,
+          decoration: BoxDecoration(
+            color: Colors.black12,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(width: 3),
+          ),
         ),
       ),
     );
