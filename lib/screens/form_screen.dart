@@ -11,11 +11,13 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
-  final String noPhoto =
-      'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large';
+
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Nova Tarefa'),
@@ -114,16 +116,18 @@ class _FormScreenState extends State<FormScreen> {
                           imageController.text,
                           errorBuilder: (BuildContext context, Object exception,
                               StackTrace? stackTrace) {
-                            return Image.asset('assets/images/noPhoto.png');
+                            return Container();
                           },
                           fit: BoxFit.cover,
                         ),
                       )),
                   ElevatedButton(
                       onPressed: () {
-                        print(nameController.text);
-                        print(int.parse(difficultyController.text));
-                        print(imageController.text);
+                        if (_formKey.currentState!.validate()) {
+                          print(nameController.text);
+                          print(int.parse(difficultyController.text));
+                          print(imageController.text);
+                        }
                       },
                       child: const Text('Adicionar!'))
                 ],
