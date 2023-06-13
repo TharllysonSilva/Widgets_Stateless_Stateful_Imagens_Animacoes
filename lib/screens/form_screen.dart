@@ -63,7 +63,7 @@ class _FormScreenState extends State<FormScreen> {
                   },
                   textAlign: TextAlign.center,
                   controller: imageController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Imagem',
                     fillColor: Colors.white70,
