@@ -49,7 +49,7 @@ class _FormScreenState extends State<FormScreen> {
                   controller: difficultyController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Nome',
+                    hintText: 'Dificuldade',
                     fillColor: Colors.white70,
                     filled: true,
                   ),
@@ -62,7 +62,7 @@ class _FormScreenState extends State<FormScreen> {
                   controller: imageController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Nome',
+                    hintText: 'Imagem',
                     fillColor: Colors.white70,
                     filled: true,
                   ),
