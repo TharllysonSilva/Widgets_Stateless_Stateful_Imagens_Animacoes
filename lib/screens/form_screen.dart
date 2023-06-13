@@ -11,7 +11,8 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
-
+  final String noPhoto =
+      'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +87,8 @@ class _FormScreenState extends State<FormScreen> {
                       imageController.text,
                       errorBuilder: (BuildContext context, Object exception,
                           StackTrace? stackTrace) {
-                        return Image.asset('nophoto.png');
+                        return Image.network(
+                            'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large');
                       },
                       fit: BoxFit.cover,
                     ),
