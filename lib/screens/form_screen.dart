@@ -86,7 +86,7 @@ class _FormScreenState extends State<FormScreen> {
                       imageController.text,
                       errorBuilder: (BuildContext context, Object exception,
                           StackTrace? stackTrace) {
-                        return Image.asset('assets/images/nophoto.png');
+                        return Image.asset('nophoto.png');
                       },
                       fit: BoxFit.cover,
                     ),
