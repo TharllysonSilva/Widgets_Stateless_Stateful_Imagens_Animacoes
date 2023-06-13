@@ -58,9 +58,12 @@ class _FormScreenState extends State<FormScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  onChanged: (text) {
+                    setState(() {});
+                  },
                   textAlign: TextAlign.center,
                   controller: imageController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Imagem',
                     fillColor: Colors.white70,
