@@ -127,7 +127,9 @@ class _FormScreenState extends State<FormScreen> {
                           print(nameController.text);
                           print(int.parse(difficultyController.text));
                           print(imageController.text);
-
+                          nameController.clear();
+                          difficultyController.clear();
+                          imageController.clear();
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Nova tarefa salva!'),
