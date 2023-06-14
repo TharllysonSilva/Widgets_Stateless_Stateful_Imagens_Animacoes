@@ -134,7 +134,6 @@ class _FormScreenState extends State<FormScreen> {
                             ),
                           );
                         }
-                        const Text('Clear');
                       },
                       child: const Text('Adicionar!'))
                 ],
