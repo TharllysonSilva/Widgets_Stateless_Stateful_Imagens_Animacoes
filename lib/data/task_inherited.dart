@@ -39,8 +39,9 @@ class TaskInherited extends InheritedWidget {
   }
 
   static TaskInherited of(BuildContext context) {
-    final TaskInherited? result = context.dependOnInheritedWidgetOfExactType();
-    assert(result != null, 'No FrogColor found in context');
+    final TaskInherited? result =
+        context.dependOnInheritedWidgetOfExactType<TaskInherited>();
+    assert(result != null, 'No TaskInherited found in context');
     return result!;
   }
 
