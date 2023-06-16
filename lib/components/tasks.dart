@@ -7,19 +7,16 @@ class Task extends StatefulWidget {
       'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large';
   final String? foto;
   final int dificuldade;
-
-  const Task(
-      {super.key, required this.nome, this.foto, required this.dificuldade});
+  Task({super.key, required this.nome, this.foto, required this.dificuldade});
 
   // const Task(this.nome, this.foto, {Key? key}) : super(key: key);
+  int nivel = 0;
 
   @override
   State<Task> createState() => _TaskState();
 }
 
 class _TaskState extends State<Task> {
-  int nivel = 0;
-
   bool assetOrNetwork() {
     if (widget.foto!.contains('http')) {
       return false;
@@ -85,7 +82,7 @@ class _TaskState extends State<Task> {
                         onPressed: () {
                           setState(
                             () {
-                              nivel++;
+                              widget.nivel++;
                             },
                           );
                           //print(nivel);
@@ -115,7 +112,7 @@ class _TaskState extends State<Task> {
                       child: LinearProgressIndicator(
                         color: Colors.white,
                         value: (widget.dificuldade > 0)
-                            ? (nivel / widget.dificuldade) / 10
+                            ? (widget.nivel / widget.dificuldade) / 10
                             : 1,
                       ),
                     ),
@@ -123,7 +120,7 @@ class _TaskState extends State<Task> {
                   Padding(
                     padding: const EdgeInsets.all(12),
                     child: Text(
-                      'Nível: $nivel',
+                      'Nível: $widget.nivel',
                       style: const TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   )
